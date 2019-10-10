@@ -1,15 +1,16 @@
-package main
+package taskManager_test
 
 import (
 	"fmt"
 	tm "manager/taskManager"
 )
-
 type task1 struct {
 	name string
 	*tm.Task
 }
-func main() {
+
+// This is Example run
+func Example() {
 	t2 := tm.NewTask(1)
 	t1 := tm.NewTask(2)
 	t3 := tm.NewTask(3)
@@ -70,6 +71,5 @@ func main() {
 
 		fmt.Printf("  %.2d:%s\n", item.GetPriority(), item.Value)
 	}
-
 
 }

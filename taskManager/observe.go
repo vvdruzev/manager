@@ -1,7 +1,5 @@
 package taskManager
 
-import "fmt"
-
 type Listener func(interface{})
 
 type Observer struct {
@@ -41,7 +39,6 @@ func (o *Observer) eventLoop() error {
 		for {
 			select {
 			case event := <-o.events:
-				fmt.Println(event)
 				o.handleEvent(event)
 			case <-o.quit:
 				return

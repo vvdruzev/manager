@@ -11,17 +11,9 @@ type Tasker interface {
 // An Item is something we manage in a priority queue.
 type Item struct {
 	Value    string // The value of the item; arbitrary.
-	//priority int    // The priority of the item in the queue.
-	// The index is needed by update and is maintained by the heap.Interface methods.
 	Index int // The index of the item in the heap.
 	Tasker
 }
-
-// task base struct
-
-
-
-
 
 // A PriorityQueue implements heap.Interface and holds Items.
 type PriorityQueue []*Item
@@ -56,7 +48,7 @@ func (pq *PriorityQueue) Pop() interface{} {
 	return item
 }
 
-func (pq *PriorityQueue) Init() {
+func Init(pq *PriorityQueue) {
 	heap.Init(pq)
 }
 
